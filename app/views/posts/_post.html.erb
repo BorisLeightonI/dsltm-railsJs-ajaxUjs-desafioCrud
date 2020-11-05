@@ -1,0 +1,7 @@
+<tr id='row_<%=post.id%>'>
+  <td><%= post.title %></td>
+  <td><%= post.content %></td>
+  <td class='text-center'><%= link_to 'Show', post, remote: true %></td>
+  <td class='text-center'><%= link_to 'Edit', edit_post_path(post), remote: true %></td>
+  <td class='text-center'><%= link_to 'Destroy', post, remote: true, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>

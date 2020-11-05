@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Posts</h1>
+<h5>Buscador</h5>
+<%= form_tag(root_path, method: :get, remote: true) do %>
+  <%= text_field_tag :q, nil, placeholder: 'buscar...' %>
+  <%= submit_tag 'Buscar' %>
+<% end %>
+
+<div id="show"></div>
+<br>
+<h5>Creador</h5>
+<%= render 'form', post: @post %>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th colspan="3" class= 'text-center'>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody id='tbody'>
+      <%= render @posts %>
+  </tbody>
+
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
